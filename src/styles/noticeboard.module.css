@@ -1,0 +1,42 @@
+.cont{
+    width: 100%;
+    height: fit-content;
+    margin-bottom: 20px;
+    text-align: center;
+    font-size: 30px;
+    border: solid;
+    border-color: black;
+    color: #000;
+}
+.main{
+    background-color: white;
+    height: 100vh;
+}
+.btn{
+    position:absolute;
+    margin: 20px;
+    min-height: 50px;
+    min-width: 100px;
+    right: 0px;
+    bottom: 0px;
+}
+.detail_cont{
+    display: block;
+    overflow: scroll;
+    height: 500px;
+   color: #000;
+   margin-bottom: 16px;
+}
+.notice_ind{
+    padding: 12px;
+    margin: 12px;
+    border-radius: 12px;
+    box-shadow: rgba(100, 100, 111, 0.2) 0px 2px 2px 0px;
+    /* background-color: ; */
+}
+.notice_ind:nth-of-type(odd) {
+    background-color:#EAFFF2;
+    }
+.notice_ind:nth-of-type(even) {
+    background-color:#EAFFF2;
+    }

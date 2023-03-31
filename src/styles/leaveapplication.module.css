@@ -1,0 +1,48 @@
+
+.cont{
+    width: 100%;
+    margin-bottom: 20px;
+    text-align: center;
+    font-size: 30px;
+    border: solid;
+    border-color: black;
+    color: #000;
+}
+.main{
+    background-color: white;
+    height: 100vh;
+}
+.table_design{
+    border: solid;
+    height: 350px;
+    border-color: #000;
+    margin-top: 20px;
+    overflow: scroll;
+
+}
+.cont{
+    height: 100vh;
+    font-size: 20px;
+}
+.header{
+    padding:10px 30px;
+    background-color: red;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.avatar{
+    height: 40px;
+    width: 40px;
+    border-radius: 50%;
+    background-color: white;
+}
+.filter{
+    padding: 30px;
+    display: flex;
+   align-items: center;
+   justify-content: space-between;
+}
+.branchSearch{
+    width: 20%;
+}

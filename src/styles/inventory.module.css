@@ -1,0 +1,23 @@
+.cont {
+    width: 100%;
+    margin-bottom: 20px;
+    text-align: center;
+    font-size: 30px;
+    border: solid;
+    border-color: black;
+    color: #000;
+}
+
+.row {
+    display: flex;
+}
+
+.col {
+    flex: 1;
+    border: 1px solid;
+    padding: 5px;
+}
+
+.table {
+   margin: 12px;
+}

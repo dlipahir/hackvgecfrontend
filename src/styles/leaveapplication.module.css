@@ -46,3 +46,17 @@
 .branchSearch{
     width: 20%;
 }
+
+.row{
+display: flex;
+}
+
+.col{
+flex: 1;
+border: 1px solid;
+padding: 0px;
+}
+.col1{
+    width: 90px;
+    border: 1px solid;
+}

@@ -1,8 +1,5 @@
 import styles from '../../styles/fees.module.css'
-// import Box from '@mui/material/Box';
 import React, { useState } from 'react'
-// import Table from 'react-bootstrap/Table';
-// import 'bootstrap/dist/css/bootstrap.min.css';
 import { data } from '../../feesData'
 import { render } from 'react-dom';
 
@@ -18,13 +15,6 @@ const Tablerender = ({ FeesPaidStatus }) => {
             if (element.Fees_paid == FeesPaidStatus) {
                 index++;
                 return (
-                    // <tr>
-                    //     <td>{index}</td>
-                    //     <td>{element.Name}</td>
-                    //     <td>{element.Enrollment_Number}</td>
-                    //     <td>{element.Semester}</td>
-                    //     <td>{element.Branch}</td>
-                    // </tr>
                     <div className={styles.row}>
                         <div className={styles.col}>{index}</div>
                         <div className={styles.col}>{element.Name}</div>
@@ -39,20 +29,6 @@ const Tablerender = ({ FeesPaidStatus }) => {
     )
     return (
         <>
-            {/* <Table hover>
-                <thead>
-                    <tr>
-                        <th>Sr. No</th>
-                        <th>Name</th>
-                        <th>Enrollement Number</th>
-                        <th>Semester</th>
-                        <th>Branch</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    {tableRows}
-                </tbody>
-            </Table> */}
             <div className={styles.row}>
                 <div className={styles.col}>Sr. No</div>
                 <div className={styles.col}>Name</div>

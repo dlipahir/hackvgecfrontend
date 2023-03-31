@@ -62,7 +62,11 @@ const nav = [
     ref: '/app/noticeBoard'
   },
   {
-    name: 'Students',
-    ref: '/'
+    name: 'Inventory',
+    ref: '/app/inventory'
+  },
+  {
+    name: 'Leave Application',
+    ref: '/app/leaveapplication'
   },
 ]

@@ -20,7 +20,7 @@
     margin: 0px 20px;
     transition: all .5s;
     cursor: pointer;
-    font-weight: bold;
+    /* font-weight: bold; */
     text-decoration: none;
 }
 .navitem:hover{

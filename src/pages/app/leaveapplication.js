@@ -1,63 +1,56 @@
 import React, { useState } from 'react'
-import Table from 'react-bootstrap/Table';
-import 'bootstrap/dist/css/bootstrap.min.css';
 import { LeaveData } from '../../LeaveData'
 import styles from '../../styles/leaveapplication.module.css'
 import Select from 'react-select'
 
 
 const Tablerender = ({ LeaveApplicationData }) => {
-    const handleOnCLick=(value,enrollement)=>{
-        let student = LeaveData.filter(item=>item.Enrollment_Number===enrollement);
-        if(value==="accept"){
-          student["approval"]="approved";
-        }else{
-            student["approval"]="denied";
+    const handleOnCLick = (value, enrollement) => {
+        let student = LeaveData.filter(item => item.Enrollment_Number === enrollement);
+        if (value === "accept") {
+            student["approval"] = "approved";
+        } else {
+            student["approval"] = "denied";
         }
         console.log(student);
     }
     const tableRows = LeaveApplicationData.map(
         (element, index) => {
             return (
-                <tr>
-                    <td>{index + 1}</td>
-                    <td>{element.Name}</td>
-                    <td>{element.Enrollment_Number}</td>
-                    <td>{element.Room_Number}</td>
-                    <td>{element.Mobile_Number}</td>
-                    <td>{element.Father_Mobile_Number}</td>
-                    <td>{element.Reason_for_Leave}</td>
-                    <td>{element.Date_of_leave}</td>
-                    <td>{element.Duration}</td>
-                    <td>{<button onClick={handleOnCLick("accept",element.Enrollment_Number)}>Accept</button>}</td>
-                    <td>{<button onClick={handleOnCLick("Reject",element.Enrollment_Number)}>Reject</button>}</td>
-                </tr>
+                <div className={styles.row}>
+                    <div className={styles.col1}>{index + 1}</div>
+                    <div className={styles.col}>{element.Name}</div>
+                    <div className={styles.col}>{element.Enrollment_Number}</div>
+                    <div className={styles.col}>{element.Room_Number}</div>
+                    <div className={styles.col}>{element.Mobile_Number}</div>
+                    <div className={styles.col}>{element.Father_Mobile_Number}</div>
+                    <div className={styles.col}>{element.Reason_for_Leave}</div>
+                    <div className={styles.col}>{element.Date_of_leave}</div>
+                    <div className={styles.col1}>{element.Duration}</div>
+                    <div className={styles.col1}>{<button onClick={handleOnCLick("accept", element.Enrollment_Number)}>Accept</button>}</div>
+                    <div className={styles.col1}>{<button onClick={handleOnCLick("Reject", element.Enrollment_Number)}>Reject</button>}</div>
+                </div>
 
             )
         }
     )
     return (
         <>
-            <Table hover>
-                <thead>
-                    <tr>
-                        <th>Sr. No</th>
-                        <th>Name</th>
-                        <th>Enrollement Number</th>
-                        <th>Room Number</th>
-                        <th>contact number</th>
-                        <th>Parent contact</th>
-                        <th>Reason</th>
-                        <th>Date</th>
-                        <th>Duration</th>
-                        <th>Accept</th>
-                        <th>Reject</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    {tableRows}
-                </tbody>
-            </Table>
+            <div className={styles.row}>
+                <div className={styles.col1}>Sr. No</div>
+                <div className={styles.col}>Name</div>
+                <div className={styles.col}>Enrollment Number</div>
+                <div className={styles.col}>Room Number</div>
+                <div className={styles.col}>contact number</div>
+                <div className={styles.col}>Parent contact</div>
+                <div className={styles.col}>Reason</div>
+                <div className={styles.col}>Date</div>
+                <div className={styles.col1}>Duration</div>
+                <div className={styles.col1}>Accept</div>
+                <div className={styles.col1}>Reject</div>
+                </div>
+            {tableRows}
+           
         </>
     )
 }
@@ -71,21 +64,17 @@ const Tablerender = ({ LeaveApplicationData }) => {
 
 const leaveapplication = () => {
     const [LeaveApplicationStatus, setLeaveApplicationStatus] = ("pending");
-     console.log("Leave application status:",LeaveApplicationStatus);
+    console.log("Leave application status:", LeaveApplicationStatus);
     const [LeaveApplication, setLeaveApplication] = useState(LeaveData);
     const filterByRequest = (value) => {
-        if(value==="All"){
+        if (value === "All") {
             setLeaveApplication(LeaveData);
-        }else{
-        setLeaveApplication(LeaveData.filter(student => student["approval"] === value))
+        } else {
+            setLeaveApplication(LeaveData.filter(student => student["approval"] === value))
         }
     }
     return (
         <div className={styles.cont}>
-            <div className={styles.header}>
-                <div className={styles.title}>ADMIN PANEL</div>
-                <div className={styles.avatar}></div>
-            </div>
             <div className={styles.header} style={{ backgroundColor: "#95faa6", fontSize: "20px" }}>
                 <div>Leave Application</div>
             </div>

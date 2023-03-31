@@ -1,0 +1,53 @@
+.cont{
+    /* background-color: cyan; */
+    font-size: 30px;
+}
+.head{
+    font-size: 40px;
+    text-align: center;
+    border-bottom: 1px solid;
+    padding: 20px;
+}
+.mainouter{
+    display: flex;
+}
+.gen{
+    text-align: center;
+    /* background-color: red; */
+    width: 100%;
+    font-size: 40px;
+    
+}
+.inner{
+    /* background-color: red; */
+    display: flex;
+    flex-wrap: wrap;
+    gap: 50px;
+    margin: 50px;
+    width: 50%;
+}
+.box{
+    /* background-color: red; */
+    display: flex;
+    font-size: 30px;
+    border: 1px solid ;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    border-radius: 20px;
+}
+.title,.value{
+    padding: 20px;
+    width: 50%;
+}
+.value{
+    border-left: 1px solid;
+
+}
+.goto{
+    /* background-color: red; */
+    width: 100%;
+    text-align: center;
+    padding: 10px;
+  border: 1px solid;
+}

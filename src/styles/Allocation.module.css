@@ -1,0 +1,34 @@
+.cont{
+    /* background-color: cyan; */
+    /* font-size: 30px; */
+    height: 100vh;
+}
+.head{
+    font-size: 40px;
+    text-align: center;
+    border-bottom: 1px solid;
+    padding: 20px;
+}
+.innercont{
+    padding: 30px;
+}
+.rules{
+
+}
+.title{
+    font-size: 20px;
+    margin: 10px;
+}
+.box{
+    font-size: 20px;
+}
+.preRules{
+    border: 1px solid ;
+    padding: 10px;
+    display: flex;
+    /* justify-content: space-around; */
+}
+.boxOuter{
+    /* background-color: red; */
+    width: 50%;
+}

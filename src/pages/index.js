@@ -2,6 +2,7 @@ import Head from 'next/head'
 import Image from 'next/image'
 import { Inter } from 'next/font/google'
 import styles from '@/styles/Home.module.css'
+import Link from 'next/link'
 
 const inter = Inter({ subsets: ['latin'] })
 
@@ -22,7 +23,10 @@ export default function Home() {
           {
             pages.map((item,i)=>{
               return (
-                <div className={styles.sideitem}>{item.title}</div>
+                <div className={styles.sideitem}>
+
+                <Link href={item.ref} >{item.title}</Link>
+                </div>
               )
             })
           }
@@ -39,12 +43,15 @@ export default function Home() {
 
 const pages = [
   {
-    title:"Entry"
+    title:"Entry",
+    ref:"/"
   },
   {
-    title:"Application"
+    title:"Application",
+    ref:"/app/application"
   },
   {
-    title:"Fees"
+    title:"Fees",
+    ref:"/"
   }
 ]

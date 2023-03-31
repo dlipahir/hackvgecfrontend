@@ -1,0 +1,30 @@
+.cont{
+    /* background-color: red; */
+    /* position: fixed;
+    width: 100%; */
+    display: flex;
+    padding: 10px;
+    align-items: center;
+    justify-content: space-between;
+    border-bottom: 1px solid #000;
+    z-index: 10;
+    background-color: white;
+}
+.logo{
+   
+}
+.navicont{
+    display: flex;
+}
+.navitem{
+    margin: 0px 20px;
+    transition: all .5s;
+    cursor: pointer;
+    font-weight: bold;
+    text-decoration: none;
+}
+.navitem:hover{
+    border-bottom: 1px solid;
+    letter-spacing: .7px;
+ 
+}

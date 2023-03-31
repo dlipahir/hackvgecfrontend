@@ -38,3 +38,15 @@
     overflow: scroll;
 
 }
+.row{
+    display: flex;
+    /* background-color: red; */
+}
+.col{
+    flex: 1;
+    border: 1px solid;
+    padding: 5px;
+}
+
+
+

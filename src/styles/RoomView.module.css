@@ -1,0 +1,46 @@
+.cont{
+    background-color: white;
+    height: 100vh;
+    padding: 20px;
+}
+.roominfo{
+  display:flex;
+  justify-content: space-between;
+}
+.studentinfo{
+    margin-top: 20px;
+}
+.title{
+    margin-bottom: 20px;
+    font-size: 30px;
+    font-weight: bold;
+}
+.row{
+    width: 50%;
+    /* background-color: red; */
+    display: flex;
+    
+}
+.name{
+    flex:1;
+    border: 1px solid #292929;
+    padding:5px 20px;   
+}
+.name0{
+    width: 100px;
+    border: 1px solid #292929;
+    padding:5px 20px; 
+    display: flex;  
+    align-items: center;
+}
+.name1{
+    width: 100px;
+    border: 1px solid #292929;
+    padding:5px 20px; 
+    display: flex;  
+    align-items: center;
+    text-decoration: underline;
+}
+.inventory{
+    margin-top: 20px;
+}

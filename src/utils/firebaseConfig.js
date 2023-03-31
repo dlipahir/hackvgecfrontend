@@ -1,7 +1,7 @@
 const { initializeApp } = require("firebase/app");
 // const { getDatabase,ref, set, child, get,update  } =require("firebase/database");
 // import { getFirestore } from "firebase/firestore";
-const { getFirestore, doc, getDoc, setDoc, Timestamp,addDoc ,collection,getDocs,orderBy,limit,query} = require("firebase/firestore");
+const { getFirestore, doc, getDoc, setDoc, Timestamp,addDoc ,collection,getDocs,orderBy,limit,query,where} = require("firebase/firestore");
 // import { initializeApp } from 'firebase/app';
 // import { getDatabase } from "firebase/database";
 
@@ -67,9 +67,45 @@ const getTodayEntries2 = async()=>{
   //       console.log("No such document!");
   //     }
    }
+const getTodayEntries3 = async()=>{
+    // const today = new Date().toISOString().slice(0, 10).replaceAll('-','');
+    // const querySnapshot = await getDocs(query(collection(db, "entry","20230328"), limit(2)));
+    // //query(citiesRef, orderBy("name"), limit(3))
+    // querySnapshot.forEach((doc) => {
+    //   // doc.data() is never undefined for query doc snapshots
+    //   console.log(doc.id, " => ", doc.data());
+    // });
 
 
-   getTodayEntries2();
+
+
+    //console.log(today);
+     const docRef = doc(db, "entry","20230331");
+    const data  = await getDoc(docRef);
+
+    if (data.exists()) {
+        console.log("Document data:", data.data());
+      } else {
+        doc.data();
+        // will be undefined in this case
+        console.log("No such document!");
+      }
+   }
+const getTodayEntries4 = async()=>{
+    // const today = new Date().toISOString().slice(0, 10).replaceAll('-','');
+    const querySnapshot = await getDocs(query(collection(db, "student"), where("checkIn", "==", true)));
+    //query(citiesRef, orderBy("name"), limit(3))
+    querySnapshot.forEach((doc) => {
+      // doc.data() is never undefined for query doc snapshots
+      console.log(doc.id, " => ", doc.data());
+    });
+
+
+
+   }
+
+
+   getTodayEntries4();
 
 
 

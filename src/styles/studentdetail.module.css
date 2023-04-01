@@ -1,0 +1,49 @@
+.cont{
+    background-color: white;
+    height: 100vh;
+    
+}
+.header{
+    padding:10px 30px;
+    background-color: red;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.avatar{
+    height: 40px;
+    width: 40px;
+    border-radius: 50%;
+    background-color: white;
+}
+.container{
+    display: flex;
+    justify-content: space-between;
+    width: 90%;
+    margin: 16px 16px 0px 16px;
+    /* border: solid;
+    border-color: black; */
+}
+.inner_container{
+    flex:1;
+    /* border: solid;
+    border-color: black; */
+}
+.property{
+display: block;
+font-size: 16px;
+color: gray;
+
+}
+.value{
+display: block;
+font-size: 20px;
+}
+.container_second{
+    display: flex;
+    justify-content: space-between;
+    width: 72%;
+    margin: 16px 16px 0px 16px;
+    /* border: solid;
+    border-color: black; */
+}

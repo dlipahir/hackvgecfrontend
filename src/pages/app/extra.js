@@ -1,10 +1,33 @@
-import React from 'react'
+import React, { useState } from 'react'
 import styles from '@/styles/Extra.module.css'
 import Link from 'next/link'
 import Select from 'react-select'
 import stuDetails from '../../utils/students.json';
 
 const Extra = () => {
+    const [StudentDetails, setFilteredStudents] = useState(stuDetails.Sheet1);
+
+    const filterByDepartment = department => {
+        if(department==="All"){
+            setFilteredStudents(stuDetails.Sheet1);
+        }else{
+        setFilteredStudents(
+          stuDetails.Sheet1.filter(student => student["Branch "] === department)
+        )
+        }
+      }
+
+      const filterByName = name => {
+        setFilteredStudents(
+          stuDetails.Sheet1.filter(student => student["Name"].includes(name))
+        )
+      }
+      const filterByRollNo = RollNo => {
+        setFilteredStudents(
+          stuDetails.Sheet1.filter(student => student["Enrollment Number"].toString(10).includes( RollNo))
+        )
+      }
+    
     return (
         <div className={styles.cont}>
             <div className={styles.header}>
@@ -13,16 +36,12 @@ const Extra = () => {
             </div>
             <div className={styles.filter}>
                 <div className={styles.filName}>Filters</div>
-                <input type="text" name="" id="" className={styles.stuSearch} placeholder="search by name"/>
-                <input type="text" name="" id="" className={styles.stuSearch} placeholder="search by Enrollment"/>
+                <input type="text" name="" id="" className={styles.stuSearch} placeholder="search by name" onChange={e => filterByName(e.target.value)}/>
+                <input type="text" name="" id="" className={styles.stuSearch} placeholder="search by Enrollment" onChange={e=>filterByRollNo(e.target.value)}/>
                 <input type="text" name="" id="" className={styles.stuSearch} placeholder="search by Room no."/>
 
                 <Select options={options}
-                    // onChange={(caste1)=>{setCaste(caste1)}}
-                    className={styles.branchSearch}
-                />
-                <Select options={options}
-                    // onChange={(caste1)=>{setCaste(caste1)}}
+                   onChange={e => filterByDepartment(e.value)}
                     className={styles.branchSearch}
                 />
             </div>
@@ -42,7 +61,7 @@ const Extra = () => {
                     </div>
 
                     {
-                        stuDetails.Sheet1.map((item, i) => {
+                       StudentDetails.map((item, i) => {
                             return (
                                 <div className={styles.row} key={i}>
                                     <div className={styles.item}>{item.Name}</div>
@@ -68,6 +87,7 @@ const Extra = () => {
                                     <div className={styles.item1}>View</div>
                                 </div>
                             )
+                                    
                         })
                     }
 
@@ -85,6 +105,7 @@ export default Extra;
 
 const options = [
 
+    {value:"All", label:"All"},
     { value: "Chemical Engineering", label: "Chemical Engineering" },
     { value: "Computer Engineering", label: "Computer Engineering" },
     { value: "Information Technology", label: "Information Technology" },

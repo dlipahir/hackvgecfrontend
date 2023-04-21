@@ -1,43 +1,70 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import styles from '@/styles/RoomView.module.css'
 import Link from 'next/link'
 import info from '../../assets/img/info.png'
 import Image from 'next/image'
 import { useRouter } from 'next/router'
+import { getDatafromRoomNo } from '@/utils/firebaseConfig'
 
 const RoomView = () => {
+    const [students, setstudents] = useState([]);
 
-    const {query} =useRouter();
+    const {query} =useRouter() || {room:"2101"};
+    
   
     console.log(query)
+    const handleFetchStudents = async()=>{
+        
+        const data = await getDatafromRoomNo(parseInt(query.room));
+        //console.log(data);
+        setstudents(data);
+    }
+    useEffect(() => {
+
+        handleFetchStudents();
+    
+      return () => {
+        
+      }
+    }, [])
+    
 
     return (
         <div className={styles.cont}>
             
             <div className={styles.roominfo}>
-                <div>Room  : {query.room}</div>
-                <div>Floor : {query.room.slice(1,2)}</div>
-                <div>hostel : {query.room.slice(0,1)}</div>
+                <div>Room  : {query?.room}</div>
+                <div>Floor : {query?.room.slice(1,2)}</div>
+                <div>hostel : {query?.room.slice(0,1)}</div>
             </div>
             <div className={styles.studentinfo}>
                 <div className={styles.title}>Student Details : </div>
                 <div className={styles.row}>
                     <div className={styles.name0}>SR No.</div>
                     <div className={styles.name}>Name</div>
+                    <div className={styles.name}>Department</div>
+                    <div className={styles.name}>Enrollment</div>
                     <div className={styles.name}>Mobile No.</div>
                     <div className={styles.name0}>info</div>
                 </div>
                 {
 
-                    data.students.map((item, i) => {
+                    students.map((item, i) => {
                         return (
                             <div className={styles.row}>
                                 <div className={styles.name0}>{i + 1}</div>
-                                <div className={styles.name}>{item.name}</div>
-                                <div className={styles.name}>{item.mobile}</div>
+                                <div className={styles.name}>{item.value.fName} {item.value.mName} {item.value.lName}</div>
+                                <div className={styles.name}>{item.value.department}</div>
+                                <div className={styles.name}>{item.value.enrollmentNumber}</div>
+                                <div className={styles.name}>{item.value.studentMobile}</div>
+                                    <Link  href={{
+                        pathname: '/app/studentdetail',
+                        query:{...item.value},
+                    }}>
                                 <div className={styles.name1}>
                                     view <Image src={info} alt="d" height={20} style={{ marginLeft: 5 }} />
                                 </div>
+                                    </Link>
                             </div>
                         )
                     })

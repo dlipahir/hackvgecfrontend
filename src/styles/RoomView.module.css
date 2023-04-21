@@ -16,9 +16,10 @@
     font-weight: bold;
 }
 .row{
-    width: 50%;
+    width: 100%;
     /* background-color: red; */
     display: flex;
+  
     
 }
 .name{
@@ -32,6 +33,7 @@
     padding:5px 20px; 
     display: flex;  
     align-items: center;
+  
 }
 .name1{
     width: 100px;

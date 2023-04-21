@@ -32,3 +32,45 @@
     /* background-color: red; */
     width: 50%;
 }
+
+.row{
+    width: 100%;
+    /* background-color: red; */
+    display: flex;
+  
+    
+}
+.name{
+    flex:1;
+    border: 1px solid #292929;
+    padding:5px 20px;   
+}
+.name0{
+    width: 100px;
+    border: 1px solid #292929;
+    padding:5px 20px; 
+    display: flex;  
+    align-items: center;
+  
+}
+.name1{
+    width: 100px;
+    border: 1px solid #292929;
+    padding:5px 20px; 
+    display: flex;  
+    align-items: center;
+    text-decoration: underline;
+}
+.allcbtn{
+    height: 50px;
+    width: 150px;
+    background-color: rgb(155, 155, 155);
+    position: absolute;
+    border: 1px solid;
+    right: 20px;
+    bottom: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 5px;
+}

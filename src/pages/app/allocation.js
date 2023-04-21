@@ -3,90 +3,47 @@ import styles from '@/styles/Allocation.module.css'
 import Link from 'next/link'
 import Quota from '@/components/Quota'
 import Select from "react-select";
+import { students } from '../../utils/Register'
+import { Main } from '@/utils/Allocation';
 
 const Allocation = () => {
+const [stu, setstu] = useState(students);
 
-    //   const [rules, setRules] = useState({});
-    const [caste, setCaste] = useState("");
-    const options = [
-        { value: "SEBC", label: "SEBC" },
-        { value: "SC", label: "SC" },
-        { value: "ST", label: "ST" },
-        { value: "EWC", label: "EWC" },
-    ];
+ const handleAllocate = ()=>{
+    const data = Main();
+    console.log(data);
+    setstu(data);
+ }
     return (
         <div className={styles.cont}>
-            <div className={styles.head}>
-                Applications
+            <div className={styles.allcbtn} onClick={handleAllocate}>Allocate</div>
+            <div className={styles.row}>
+                <div className={styles.name0}>SR No.</div>
+                <div className={styles.name}>Name</div>
+                <div className={styles.name}>ACPC Rank</div>
+                <div className={styles.name}>Caste</div>
+                <div className={styles.name}>Department</div>
+        
             </div>
-            <div className={styles.innercont}>
-                <div className={styles.rules}>
-                    <div className={styles.title}>
-                        Rules
-                    </div>
-                    <div className={styles.title}>  
-                            ACPC Rules
-                        </div>
-                    <div className={styles.preRules}>
-                        <div className={styles.boxOuter}>
-                        {
-                            preRules.catse.map((item, i) => {
-                                return (
-                                    <div className={styles.box}>
-                                        {item.name} : {item.reserv}%
-                                    </div>
-                                )
-                            })
-                        }
-                        </div>
-                        <div className={styles.boxOuter}>
 
-                        {
-                            preRules.extras.map((item, i) => {
-                                return (
-                                    <div className={styles.box}>
-                                        {item.name} : {item.reserv}%
-                                    </div>
-                                )
-                            })
-                        }
-                        </div>
-                    </div>
-                </div>
-            </div>
-            {/* <div>
-                set rule for caste
-                <Select options={options} onChange={(caste1)=>{setCaste(caste1)}}/>
-                
-            </div>
-            <div>{`${caste.value}`}</div>
             {
-                caste
-            } */}
-
-
-            <div className="casteSelection">
-                <div>
-                    OBC caste %
-                </div>
-                <input type='text' />
-                <div>
-                    SC caste %
-                </div>
-                <input type='text' />
-                <div>
-                    ST caste %
-                </div>
-                <input type='text' />
-
-
-
-
-            </div>
-
-
+                stu.map((item,i) => {
+                    return (
+                        <div className={styles.row}>
+                            <div className={styles.name0}>{i+1}</div>
+                            <div className={styles.name}>{item.Name}</div>
+                            <div className={styles.name}>{item["ACPC Rank"]}</div>
+                            <div className={styles.name}>{item["Cast "]}</div>
+                            <div className={styles.name}>{item["Branch "]}</div>
+                    
+                        </div>
+                    )
+                })
+            }
 
         </div>
+
+
     )
 }
 

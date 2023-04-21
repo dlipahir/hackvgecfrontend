@@ -25,7 +25,7 @@ const data = [
 
     {
         roomNo: 2101,
-        check: [0, 1, 1]
+        check: [0, 1, 2]
     },
     {
         roomNo: 2102,

@@ -1,11 +1,30 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import styles from '@/styles/Extra.module.css'
 import Link from 'next/link'
 import Select from 'react-select'
 import stuDetails from '../../utils/students.json';
+import hosteldata from '../../utils/hostel.json';
+import {updateHostel} from '../../utils/firebaseConfig'
 
 const Extra = () => {
     const [StudentDetails, setFilteredStudents] = useState(stuDetails.Sheet1);
+
+
+
+
+    useEffect(() => {
+      
+        // hosteldata.Sheet1.forEach(element => {
+        //     console.log(element);
+        //     updateHostel(hosteldata.Sheet1[0]["Enrollment Number"],hosteldata.Sheet1[0]);
+        // });
+        // console.log(hosteldata.Sheet1[0]["Enrollment Number"],hosteldata.Sheet1[0]);
+        // updateHostel(hosteldata.Sheet1[0]["Enrollment Number"],hosteldata.Sheet1[0]);
+      return () => {
+        
+      }
+    }, [])
+    
 
     const filterByDepartment = department => {
         if(department==="All"){
